@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 810759739583652097, guid: c662ba43237c55140a3a81b7a457b214, type: 3}
   ID: 1
-  speed: 2
-  maxRotation: 25
+  amplitude: 0.2
+  frequency: 0.5
 --- !u!212 &6962632834079030322
 SpriteRenderer:
   m_ObjectHideFlags: 0

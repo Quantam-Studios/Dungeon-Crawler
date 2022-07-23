@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2866860019080399635, guid: c0bd0603347f97d4d93b73b61723da48, type: 3}
   ID: 4
-  speed: 2
-  maxRotation: 25
+  amplitude: 0.2
+  frequency: 0.5
 --- !u!50 &8537241473954746771
 Rigidbody2D:
   serializedVersion: 4
