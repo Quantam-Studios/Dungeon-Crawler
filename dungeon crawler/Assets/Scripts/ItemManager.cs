@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class ItemManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class ItemManager : MonoBehaviour
     // Drop Item
     private GameObject player;
     public float offset;
-    public int HeldLayer;
+    [FormerlySerializedAs("HeldLayer")] public int heldLayer;
 
     void Awake()
     {
@@ -59,14 +60,14 @@ public class ItemManager : MonoBehaviour
         Hand1Item.transform.parent.position = new Vector3(i.pivotPoint.position.x, i.pivotPoint.position.y, 0);
         Hand1Item.transform.position = new Vector3(i.heldPoint.position.x, i.heldPoint.position.y, 0);
         GameObject g2 = Instantiate(i.item, Hand1Item.transform, false);
-        g2.layer = HeldLayer;
+        g2.layer = heldLayer;
     }
 
-    public void Drop(int Itemid)
+    public void Drop(int itemId)
     {
         // Drop Item in Active slot
-        int ID = Itemid;
-        Item i = Array.Find(Items, Item => Item.ID == ID);
+        int id = itemId;
+        Item i = Array.Find(Items, Item => Item.ID == id);
 
         // Create item in world
         Vector2 playerPos = new Vector2(player.transform.position.x + offset, player.transform.position.y);
@@ -76,7 +77,7 @@ public class ItemManager : MonoBehaviour
         // destroy old item in hand
         if (Hand1Item.transform.childCount > 0)
         {
-            GameObject g = Hand1Item.transform.GetChild(0).gameObject;
+            var g = Hand1Item.transform.GetChild(0).gameObject;
             Destroy(g);
         }
     }

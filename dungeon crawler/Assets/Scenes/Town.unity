@@ -42519,7 +42519,7 @@ MonoBehaviour:
   HandForSword: {fileID: 351351293}
   HandForBow: {fileID: 1803031794}
   offset: 1
-  HeldLayer: 6
+  heldLayer: 6
 --- !u!4 &1637025613
 Transform:
   m_ObjectHideFlags: 0
@@ -51833,7 +51833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996554333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 8, z: -55}
+  m_LocalPosition: {x: -17.8, y: 1.4, z: -55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1691499353}

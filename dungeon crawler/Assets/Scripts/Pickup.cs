@@ -11,26 +11,21 @@ public class Pickup : MonoBehaviour
     private ItemManager itemmanager;
 
     //Bobbing
-    public float amplitude = 0.5f;
-    public float frequency = 1f;
-    Vector3 posOffset = new Vector3();
-    Vector3 tempPos = new Vector3();
+    public float speed = 2f;
+    public float maxRotation = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
         hotbar = GameObject.FindGameObjectWithTag("HotBar").GetComponent<Hotbar>();
         itemmanager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
-        posOffset = transform.position;
+        speed = Random.Range(speed, speed * 0.5f);
     }
 
     void Update()
     {
-        // Float up/down with a Sin()
-        tempPos = posOffset;
-        tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
-
-        transform.position = tempPos;
+        // Rotate t varying speeds
+        transform.rotation = Quaternion.Euler(0f, 0f, maxRotation * Mathf.Sin(Time.time * speed));
     }
 
     void OnCollisionEnter2D(Collision2D col)

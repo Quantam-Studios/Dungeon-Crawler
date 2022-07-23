@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 7101472028843841367, guid: ed9ef424099b9bc418027cf8564a997b, type: 3}
   ID: 2
-  amplitude: 0.2
-  frequency: 0.5
+  speed: 2
+  maxRotation: 45
 --- !u!58 &925452621421098036
 CircleCollider2D:
   m_ObjectHideFlags: 0

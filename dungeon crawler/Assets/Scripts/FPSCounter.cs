@@ -13,6 +13,9 @@ public class FPSCounter : MonoBehaviour
 
     void Start()
     {
+        // Make the game run as fast as possible
+        Application.targetFrameRate = 60;
+        // Initial Stats.
         lowestFrameRate = 5000;
         current = 5000;
         timer = 0;
